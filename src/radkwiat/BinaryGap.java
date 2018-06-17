@@ -19,8 +19,7 @@ public class BinaryGap {
 		int result = 0;
 		StringBuffer binStr = new StringBuffer(Integer.toBinaryString(N));
 		int start = binStr.indexOf("1");
-		StringBuffer binStrRev = binStr.reverse();
-		int end = binStr.length() - binStrRev.indexOf("1");
+		int end = binStr.length() - binStr.reverse().indexOf("1");
 		String binStrReady = binStr.reverse().substring(start, end);
 		StringTokenizer strTok = new StringTokenizer(binStrReady, "1");
 		while (strTok.hasMoreTokens()) {
