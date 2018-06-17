@@ -1,5 +1,7 @@
 package radkwiat;
 
+import java.util.StringTokenizer;
+
 public class BinaryGap {
 
 	public static void main(String[] args) {
@@ -9,36 +11,23 @@ public class BinaryGap {
 		int N = 328;
 		String s = Integer.toBinaryString(N);
 		System.out.println("binarna = " + s);
-		System.out.println("wynik = " + binGap.solution(N));
+		System.out.println("wynik = " + binGap.solution2(N));
 
 	}
 
 	public int solution2(int N) {
 		int result = 0;
-		String str = Integer.toBinaryString(N);
-		char[] array = str.toCharArray();
-		
-
-
-		return result;
-	}
-
-	public int solution(int N) {
-
-		int result = 0;
-		int longestReasult = 1;
-		String str = Integer.toBinaryString(N);
-		char[] array = str.toCharArray();
-
-		for (int i = 0; i < array.length - 1; i++) {
-			if (array[i] == '0' && array[i + 1] == '0') {
-				longestReasult++;
-				if (longestReasult > result) {
-					result = longestReasult;
-				}
-			}
-			if (array[i] != '0') {
-				longestReasult = 1;
+		StringBuffer binStr = new StringBuffer(Integer.toBinaryString(N));
+		int start = binStr.indexOf("1");
+		StringBuffer binStrRev = binStr.reverse();
+		int end = binStr.length() - binStrRev.indexOf("1");
+		String binStrReady = binStr.reverse().substring(start, end);
+		StringTokenizer strTok = new StringTokenizer(binStrReady, "1");
+		while (strTok.hasMoreTokens()) {
+			String strResult = strTok.nextToken();
+			int occurs0 = strResult.length();
+			if (occurs0 > result) {
+				result = occurs0;
 			}
 		}
 		return result;

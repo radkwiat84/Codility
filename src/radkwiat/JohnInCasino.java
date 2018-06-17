@@ -10,7 +10,7 @@ public class JohnInCasino {
 		int K = 0;
 		System.out.println(solution(N, K));
 
-		N = 18;
+		N = 19;
 		K = 2;
 		System.out.println(solution(N, K));
 
@@ -35,12 +35,11 @@ public class JohnInCasino {
 				}
 				if (betting.get(i) % 2 != 0 || (betting.get(i) % 2 == 0 && K <= doneNumberOfAllIn)) {
 					betting.add(betting.get(i) - 1);
-				} else if (K > doneNumberOfAllIn) {
+				} else {
+//				if(K > doneNumberOfAllIn) {
 					betting.add(betting.get(i) / 2);
 					doneNumberOfAllIn++;
 				}
-				
-				System.out.println(betting);
 			}
 		}
 		return 0;
