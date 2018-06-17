@@ -1,20 +1,19 @@
 package radkwiat;
 
 import java.util.HashSet;
-import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class MissingInteger {
 
 	public static void main(String[] args) {
-		int[] B = { 1, 2, 3, 4 };
+		int[] B = { -1 };
 
 		System.out.println(solution(B));
 
 	}
 
 	public static int solution(int[] A) {
-		Set<Integer> array = new LinkedHashSet<>();
+		Set<Integer> array = new HashSet<>();
 
 		for (Integer x : A) {
 			if (x > 0)
