@@ -1,12 +1,12 @@
-package radkwiat;
+package radkwiat.Lession002;
 
 import java.util.Arrays;
 
-public class RotationsArrays {
+public class CyclicRoation {
 
 	public static void main(String[] args) {
 
-		RotationsArrays rotArr = new RotationsArrays();
+		CyclicRoation rotArr = new CyclicRoation();
 
 		int[] A = { 3, 8, 9, 7, 6 };
 		int K = 3;

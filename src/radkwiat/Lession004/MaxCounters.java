@@ -1,4 +1,4 @@
-package radkwiat;
+package radkwiat.Lession004;
 
 import java.util.Arrays;
 
@@ -13,8 +13,8 @@ public class MaxCounters {
 	}
 
 	public static int[] solution(int N, int[] A) {
-		int maxValueOfCouner = 0;
-		int valueOfActuallyFieldOfArray = 0;
+		int maxValueOfCounter = 0;
+		int valueOfActualFieldOfArray = 0;
 
 		int[] result = new int[N];
 		Arrays.fill(result, 0);
@@ -22,10 +22,10 @@ public class MaxCounters {
 		for (int x : A) {
 			if (isIncrease(x, N)) {
 				result[x - 1]++;
-				valueOfActuallyFieldOfArray = result[x - 1];
-				maxValueOfCouner = setMaxValueOfCouner(maxValueOfCouner, valueOfActuallyFieldOfArray);
+				valueOfActualFieldOfArray = result[x - 1];
+				maxValueOfCounter = setMaxValueOfCouner(maxValueOfCounter, valueOfActualFieldOfArray);
 			} else {
-				Arrays.fill(result, maxValueOfCouner);
+				Arrays.fill(result, maxValueOfCounter);
 			}
 
 		}

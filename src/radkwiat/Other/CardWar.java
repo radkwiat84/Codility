@@ -1,4 +1,4 @@
-package radkwiat;
+package radkwiat.Other;
 
 public class CardWar {
 	private final static char[] Pool = { 'T', 'J', 'Q', 'K', 'A' };

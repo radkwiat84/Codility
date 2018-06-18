@@ -1,4 +1,4 @@
-package radkwiat;
+package radkwiat.Lession003;
 
 public class FrogJmp {
 

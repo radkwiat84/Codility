@@ -1,4 +1,4 @@
-package radkwiat;
+package radkwiat.Other;
 
 import java.util.ArrayList;
 import java.util.List;
