@@ -15,15 +15,14 @@ public class MissingInteger {
 	public static int solution(int[] A) {
 		Set<Integer> array = new HashSet<>();
 
-		for (Integer x : A) {
+		for (int x : A) {
 			if (x > 0)
 				array.add(x);
 		}
 		if (array.isEmpty())
 			return 1;
 	
-		Integer[] readyArray = new Integer[array.size()];
-		array.toArray(readyArray);
+		Integer[] readyArray = array.toArray(new Integer[array.size()]);
 		
 		if (readyArray[0] != 1)
 			return 1;
