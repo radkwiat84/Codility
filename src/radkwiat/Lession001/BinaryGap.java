@@ -18,9 +18,11 @@ public class BinaryGap {
 	public int solution2(int N) {
 		int result = 0;
 		StringBuffer binStr = new StringBuffer(Integer.toBinaryString(N));
-		int start = binStr.indexOf("1");
-		int end = binStr.length() - binStr.reverse().indexOf("1");
-		String binStrReady = binStr.reverse().substring(start, end);
+		int start = binStr.indexOf("1") + 1;
+		int end2 = binStr.lastIndexOf("1");
+		
+		String binStrReady = binStr.substring(start, end2);
+		
 		StringTokenizer strTok = new StringTokenizer(binStrReady, "1");
 		while (strTok.hasMoreTokens()) {
 			String strResult = strTok.nextToken();
