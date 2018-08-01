@@ -20,10 +20,9 @@ public class GenomicRangeQuery {
 	public int[] solution(String S, int[] P, int[] Q) {
 		int lengthOfP = P.length;
 		int[] result = new int[lengthOfP];
-		StringBuilder strBuilder = new StringBuilder(S);
 		for (int i = 0; i < lengthOfP; i++) {
 
-			String[] strTemp = (strBuilder.substring(P[i], Q[i]) + S.charAt(Q[i])).split("");
+			String[] strTemp = (S.substring(P[i], Q[i]) + S.charAt(Q[i])).split("");
 			Arrays.sort(strTemp);			
 			
 			switch(strTemp[0]) {
