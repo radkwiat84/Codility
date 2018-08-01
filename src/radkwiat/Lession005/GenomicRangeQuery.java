@@ -23,20 +23,22 @@ public class GenomicRangeQuery {
 		StringBuilder strBuilder = new StringBuilder(S);
 		for (int i = 0; i < lengthOfP; i++) {
 
-			String strTemp = strBuilder.substring(P[i], Q[i]);
-			strTemp += S.charAt(Q[i]);
-
-			if (strTemp.contains("A")) {
+			String[] strTemp = (strBuilder.substring(P[i], Q[i]) + S.charAt(Q[i])).split("");
+			Arrays.sort(strTemp);			
+			
+			switch(strTemp[0]) {
+			case "A":
 				result[i] = 1;
-				continue;
-			} else if (strTemp.contains("C")) {
+				break;
+			case "C":
 				result[i] = 2;
-				continue;
-			} else if (strTemp.contains("G")) {
+				break;
+			case "G":
 				result[i] = 3;
-				continue;
-			} else if (strTemp.contains("T")) {
+				break;
+			case "T":
 				result[i] = 4;
+				break;
 			}
 		}
 		return result;
